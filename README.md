@@ -3,6 +3,7 @@
 This is a reproduction of the electric container not running properly in wrangler's docker environment.
 
 > Note: you need docker running. You do not need a cloudflare account to test locally.
+> Idk if it matters, but I'm running on apple silicon
 
 ```bash
 bun i
