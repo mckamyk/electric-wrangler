@@ -3,7 +3,13 @@
 This is a reproduction of the electric container not running properly in wrangler's docker environment.
 
 > Note: you need docker running. You do not need a cloudflare account to test locally.
+>
 > Idk if it matters, but I'm running on apple silicon
+
+The [worker's](./worker.ts:12) fetch export is where i could put the auth proxy handling
+the call to `container.fetch(request)` is where it routes it to the `defaultPort` configured in the `Electric` class.
+
+`Electric` extends `Container` which also extends `DurableObject` with SQLite with it. w
 
 ```bash
 bun i
