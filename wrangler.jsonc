@@ -1,0 +1,27 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "electric-wrangler",
+	"main": "./worker.ts",
+	"compatibility_date": "2025-08-05",
+	"containers": [
+		{
+			"class_name": "Electric", // must match with DO binding class_name
+			"image": "./Dockerfile",
+			"name": "electric" // name of the container in dash.cloudflare.com
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "Electric", // matches with container class_name
+				"name": "Electric" // What is exposed to env
+			}
+		]
+	},
+	"migrations": [
+		{
+			"new_sqlite_classes": ["Electric"], // DO name
+			"tag": "v1"
+		}
+	]
+}
